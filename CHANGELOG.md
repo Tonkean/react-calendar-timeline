@@ -7,6 +7,10 @@ and this project adheres (more or less) to [Semantic Versioning](http://semver.o
 
 ## Unreleased
 
+### Added in this fork
+* stackItems force - set stackItems as `force` to force the items to be stacked regardless of collision
+* minGroupHeight - specify min group height. (optional)
+
 
 ### 0.17.2
 

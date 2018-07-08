@@ -209,7 +209,8 @@ export function collision(a, b, lineHeight, collisionPadding = EPSILON) {
   )
 }
 
-export function stack(items, groupOrders, lineHeight, force) {
+export function stack(items, groupOrders, lineHeight, force, minGroupHeight) {
+  minGroupHeight = minGroupHeight || 0;
   var i, iMax
   var totalHeight = 0
 
@@ -267,8 +268,9 @@ export function stack(items, groupOrders, lineHeight, force) {
       }
     }
 
-    groupHeights.push(Math.max(groupHeight + verticalMargin, lineHeight))
-    totalHeight += Math.max(groupHeight + verticalMargin, lineHeight)
+    let addedHeight = Math.max(groupHeight + verticalMargin, lineHeight, minGroupHeight);
+    groupHeights.push(addedHeight);
+    totalHeight += addedHeight;
   })
   return {
     height: totalHeight,
@@ -277,7 +279,8 @@ export function stack(items, groupOrders, lineHeight, force) {
   }
 }
 
-export function forcestack(items, groupOrders, lineHeight, force) {
+export function forcestack(items, groupOrders, lineHeight, force, minGroupHeight) {
+  minGroupHeight = minGroupHeight || 0;
   var i, iMax;
   var totalHeight = 0;
 
@@ -305,8 +308,9 @@ export function forcestack(items, groupOrders, lineHeight, force) {
       groupHeight += lineHeight;
     }
 
-    groupHeights.push(Math.max(groupHeight + verticalMargin, lineHeight));
-    totalHeight += Math.max(groupHeight + verticalMargin, lineHeight);
+    let addedHeight = Math.max(groupHeight + verticalMargin, lineHeight, minGroupHeight);
+    groupHeights.push(addedHeight);
+    totalHeight += addedHeight;
   });
   return {
     height: totalHeight,
@@ -315,7 +319,8 @@ export function forcestack(items, groupOrders, lineHeight, force) {
   }
 }
 
-export function nostack(items, groupOrders, lineHeight, force) {
+export function nostack(items, groupOrders, lineHeight, force, minGroupHeight) {
+  minGroupHeight = minGroupHeight || 0;
   var i, iMax
 
   var totalHeight = 0
@@ -347,8 +352,9 @@ export function nostack(items, groupOrders, lineHeight, force) {
       }
     }
 
-    groupHeights.push(Math.max(groupHeight, lineHeight))
-    totalHeight += Math.max(groupHeight, lineHeight)
+    let addedHeight = Math.max(groupHeight + verticalMargin, lineHeight, minGroupHeight);
+    groupHeights.push(addedHeight);
+    totalHeight += addedHeight;
   })
   return {
     height: totalHeight,

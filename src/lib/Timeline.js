@@ -50,6 +50,7 @@ export default class ReactCalendarTimeline extends Component {
     headerLabelHeight: PropTypes.number,
     itemHeightRatio: PropTypes.number,
     minimumWidthForItemContentVisibility: PropTypes.number,
+    minGroupHeight: PropTypes.number,
 
     minZoom: PropTypes.number,
     maxZoom: PropTypes.number,
@@ -62,7 +63,7 @@ export default class ReactCalendarTimeline extends Component {
     useResizeHandle: PropTypes.bool,
     canSelect: PropTypes.bool,
 
-    stackItems: PropTypes.string,
+    stackItems: PropTypes.oneOf([true, false, 'force']),
 
     traditionalZoom: PropTypes.bool,
     showCursorLine: PropTypes.bool,
@@ -1098,7 +1099,8 @@ export default class ReactCalendarTimeline extends Component {
       dimensionItems,
       groupOrders,
       lineHeight,
-      headerHeight
+      headerHeight,
+      this.props.minGroupHeight
     )
 
     return { dimensionItems, height, groupHeights, groupTops }
