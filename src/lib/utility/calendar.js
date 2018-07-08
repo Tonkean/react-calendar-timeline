@@ -277,6 +277,44 @@ export function stack(items, groupOrders, lineHeight, force) {
   }
 }
 
+export function forcestack(items, groupOrders, lineHeight, force) {
+  var i, iMax;
+  var totalHeight = 0;
+
+  var groupHeights = [];
+  var groupTops = [];
+
+  var groupedItems = getGroupedItems(items, groupOrders);
+  if (force) {
+    // reset top position of all items
+    for (i = 0, iMax = items.length; i < iMax; i++) {
+      items[i].dimensions.top = null
+    }
+  }
+
+  // stack all the items on top of eachother taking vertical margin into account.
+  groupedItems.forEach(function(group) {
+    groupTops.push(totalHeight);
+
+    var groupHeight = 0;
+    var verticalMargin = 0;
+    for (i = 0, iMax = group.length; i < iMax; i++) {
+      var item = group[i];
+      verticalMargin = lineHeight - item.dimensions.height;
+      item.dimensions.top = totalHeight + groupHeight + verticalMargin;
+      groupHeight += lineHeight;
+    }
+
+    groupHeights.push(Math.max(groupHeight + verticalMargin, lineHeight));
+    totalHeight += Math.max(groupHeight + verticalMargin, lineHeight);
+  });
+  return {
+    height: totalHeight,
+    groupHeights,
+    groupTops
+  }
+}
+
 export function nostack(items, groupOrders, lineHeight, force) {
   var i, iMax
 

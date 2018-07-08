@@ -18,6 +18,7 @@ import {
   getMinUnit,
   getNextUnit,
   stack,
+  forcestack,
   nostack,
   calculateDimensions,
   getGroupOrders,
@@ -61,7 +62,7 @@ export default class ReactCalendarTimeline extends Component {
     useResizeHandle: PropTypes.bool,
     canSelect: PropTypes.bool,
 
-    stackItems: PropTypes.bool,
+    stackItems: PropTypes.string,
 
     traditionalZoom: PropTypes.bool,
     showCursorLine: PropTypes.bool,
@@ -185,7 +186,7 @@ export default class ReactCalendarTimeline extends Component {
     useResizeHandle: false,
     canSelect: true,
 
-    stackItems: false,
+    stackItems: null,
 
     traditionalZoom: false,
     showCursorLine: false,
@@ -1091,7 +1092,7 @@ export default class ReactCalendarTimeline extends Component {
       return memo
     }, [])
 
-    const stackingMethod = stackItems ? stack : nostack
+    const stackingMethod = !stackItems ? nostack : (stackItems === 'force' ? forcestack : stack);
 
     const { height, groupHeights, groupTops } = stackingMethod(
       dimensionItems,
