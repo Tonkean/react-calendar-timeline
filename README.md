@@ -1,3 +1,6 @@
+THIS IS A FORKED VERSION, PLEASE USE THE ORIGINAL LIBRARY:https://github.com/namespace-ee/react-calendar-timeline
+AS MOST OF THE CODE HERE IS THEIR's
+
 # React Calendar Timeline
 
 A modern and responsive react timeline component.
