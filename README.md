@@ -236,7 +236,10 @@ Show a vertical line at the snap point when you mouse over the calendar
 
 ### stackItems
 
-Stack items under each other, so there is no visual overlap when times collide. Defaults to `false`.
+Stack items under each other, so there is no visual overlap when times collide. Defaults to null.
+if null, will not stack.
+if is exactly the string 'force', will always stack regardless of collisions.
+if exists but is not the previous options will default to stacking on collisons (to support the earlier value of true)
 
 ### traditionalZoom
 
