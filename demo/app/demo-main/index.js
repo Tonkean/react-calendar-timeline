@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react'
-import moment from 'moment'
+import moment from 'moment-mini'
 
 import Timeline from 'react-calendar-timeline'
 

@@ -1,6 +1,6 @@
 import faker from 'faker'
 import randomColor from 'randomcolor'
-import moment from 'moment'
+import moment from 'moment-mini'
 
 export default function (groupCount = 30, itemCount = 1000, daysInPast = 30) {
   let randomSeed = Math.floor(Math.random() * 1000)

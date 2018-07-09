@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import Timeline from 'lib/Timeline'
 
-import moment from 'moment'
+import moment from 'moment-mini'
 
 const groups = [
   { id: 2, title: 'group 2' },

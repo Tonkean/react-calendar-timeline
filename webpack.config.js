@@ -11,7 +11,7 @@ const config = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
   context: path.join(__dirname, './demo'),
   entry: {
-    vendor: ['react', 'react-dom', 'faker', 'interactjs', 'moment'],
+    vendor: ['react', 'react-dom', 'faker', 'interactjs', 'moment-mini'],
     demo: isProd
       ? ['./index.js']
       : [
@@ -69,7 +69,6 @@ const config = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new ExtractTextPlugin('[name].css'),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(nodeEnv)

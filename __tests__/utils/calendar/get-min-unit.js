@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { getMinUnit, minCellWidth } from 'lib/utility/calendar'
-import moment from 'moment'
+import moment from 'moment-mini'
 import { defaultTimeSteps } from 'lib/default-config'
 
 describe('getMinUnit', () => {
