@@ -1,5 +1,5 @@
 import { getVisibleItems } from 'lib/utility/calendar'
-import moment from 'moment-mini'
+import moment from 'moment'
 
 const itemTimeStartKey = 'start'
 const itemTimeEndKey = 'end'

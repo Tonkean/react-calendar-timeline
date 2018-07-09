@@ -19,7 +19,7 @@ yarn add react-calendar-timeline
 npm install --save react-calendar-timeline
 ```
 
-`react-calendar-timeline` has `react`, `react-dom`, [`moment-mini`](https://github.com/ksloan/moment-mini#readme/) and [`interactjs`](http://interactjs.io/docs/) as peer dependencies.
+`react-calendar-timeline` has `react`, `react-dom`, [`moment`](http://momentjs.com/) and [`interactjs`](http://interactjs.io/docs/) as peer dependencies.
 
 ## Usage
 
@@ -29,7 +29,7 @@ At the very minimum:
 import Timeline from 'react-calendar-timeline'
 // make sure you include the timeline stylesheet or the timeline will not be styled
 import 'react-calendar-timeline/lib/Timeline.css'
-import moment from 'moment-mini'
+import moment from 'moment'
 
 const groups = [{ id: 1, title: 'group 1' }, { id: 2, title: 'group 2' }]
 

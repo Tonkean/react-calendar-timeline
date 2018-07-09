@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import interact from 'interactjs/src/index'
-import moment from 'moment-mini'
+import moment from 'moment'
 
 import { _get, deepObjectCompare } from '../utility/generic'
 

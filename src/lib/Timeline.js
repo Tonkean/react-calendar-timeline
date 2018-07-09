@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import moment from 'moment-mini'
+import moment from 'moment'
 
 import Items from './items/Items'
 import InfoLabel from './layout/InfoLabel'

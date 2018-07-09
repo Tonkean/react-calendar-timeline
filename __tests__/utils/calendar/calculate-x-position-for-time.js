@@ -1,5 +1,5 @@
 import { calculateXPositionForTime } from 'lib/utility/calendar'
-import moment from 'moment-mini'
+import moment from 'moment'
 
 describe('calculateXPositionForTime', () => {
   const width = 1000

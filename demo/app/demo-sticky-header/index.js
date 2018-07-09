@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import moment from 'moment-mini'
+import moment from 'moment'
 
 import Timeline from 'react-calendar-timeline'
 import containerResizeDetector from '../../../src/resize-detector/container'
